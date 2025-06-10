@@ -1,6 +1,6 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import test-generator from './test-generator';
+import { TestGenerator } from './test-generator';
 
 describe('test-generator', () => {
   it('renders without crashing', () => {
