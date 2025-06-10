@@ -1,0 +1,44 @@
+{
+  "testAutomation": {
+    "srcDir": "src",
+    "testDir": "src",
+    "watchPaths": ["src"],
+    "excludePatterns": [
+      "**/*.test.*",
+      "**/*.spec.*",
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/build/**",
+      "**/*.config.*"
+    ],
+    "fileExtensions": [".ts", ".tsx", ".js", ".jsx"],
+    "testFilePatterns": {
+      "component": "{name}.test.tsx",
+      "utility": "{name}.test.ts",
+      "hook": "{name}.test.ts"
+    },
+    "gitIntegration": {
+      "enabled": true,
+      "autoStage": true,
+      "runTestsAfterGeneration": false
+    },
+    "templates": {
+      "reactComponent": {
+        "imports": [
+          "import { render, screen, fireEvent } from '@testing-library/react';",
+          "import { describe, it, expect } from 'vitest';"
+        ],
+        "includeSnapshot": true,
+        "includePropsTests": true,
+        "includeStateTests": true,
+        "includeEffectTests": true
+      },
+      "utility": {
+        "imports": [
+          "import { describe, it, expect } from 'vitest';"
+        ],
+        "includeAsyncTests": true
+      }
+    }
+  }
+}
